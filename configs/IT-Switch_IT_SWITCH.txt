@@ -1,0 +1,141 @@
+DEVICE: IT SWITCH - IT_SWITCH
+PROJECT: Enterprise Network - Cisco Packet Tracer
+AUTHOR: Batuhan Çakmak
+========================================================================
+
+Current configuration : 2165 bytes
+
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname IT_SWITCH
+!
+!
+!
+ip domain-name it
+ip name-server 192.168.100.10
+!
+username admin secret 5 $1$mERr$AFX/pZT1Lh7NP3Dp3P/qq/
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/2
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/3
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/4
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/5
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/6
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/7
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/8
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/9
+ switchport access vlan 30
+ switchport mode access
+!
+interface FastEthernet0/10
+ switchport access vlan 30
+ switchport mode access
+!
+interface FastEthernet0/11
+ switchport access vlan 30
+ switchport mode access
+!
+interface FastEthernet0/12
+ switchport access vlan 30
+ switchport mode access
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+ switchport access vlan 70
+ switchport mode access
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+ switchport access vlan 99
+ switchport mode access
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ no ip address
+!
+interface Vlan40
+ no ip address
+!
+interface Vlan99
+ ip address 192.168.99.2 255.255.255.0
+!
+ip default-gateway 199.168.99.1
+!
+!
+!
+!
+line con 0
+ password admin123
+ login
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+!
+end
